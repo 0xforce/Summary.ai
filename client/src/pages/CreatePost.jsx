@@ -30,7 +30,7 @@ const CreatePost = () => {
     if(form.text) {
       try {
         setGeneratingTxt(true)
-        const response = await fetch('http://localhost:8080/api/v1/gpt', {
+        const response = await fetch('https://synthax.onrender.com/api/v1/gpt', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ const CreatePost = () => {
 
   const tokenData = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/v1/gpt/tokens', {
+      const response = await fetch('https://synthax.onrender.com/api/v1/gpt/tokens', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -83,7 +83,7 @@ const CreatePost = () => {
       setLoading(true)
 
       try {
-        const response = await fetch('http://localhost:8080/api/v1/post', {
+        const response = await fetch('https://synthax.onrender.com/api/v1/post', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(form)
